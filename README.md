@@ -6,7 +6,42 @@ IP Header : src ip / dst ip <br />
 TCP Header : src port / dst port <br />
 Message도 출력하면 좋음. (적당한 길이로) <br />
 
-## TCP protocol 만을 대상으로 진행 (UDP는 무시), sniff_improved.c, myheader.h 코드 참고
+## Docker 
+Docker Compose
+```bash
+docker-compose up
+```
+
+Start Server Container
+```bash
+docker exec --it server bin/bash
+```
+Start Client Container
+```bash
+docker exec --it client bin/bash
+```
+
+Check Server IP
+```bash
+ifconfig
+```
+Check Server Port
+```bash
+cat sniff_server.c
+```
+
+## Start TCP
+Server
+```bash
+./sniff_server
+```
+
+Client
+```bash
+nc <server_ip> <server_port>
+```
+
+## 참고
 sniff_improved.c <br />
 ```C
 ...
@@ -63,22 +98,3 @@ struct tcpheader {
 
 ...
 ```
-## Docker 
-Docker Compose
-```bash
-docker-compose up
-```
-Check Server IP
-```bash
-ifconfig
-```
-## Start TCP
-Server
-```bash
-./sniff_server
-```
-Client
-```bash
-nc <server_ip> <server_port>
-```
-
