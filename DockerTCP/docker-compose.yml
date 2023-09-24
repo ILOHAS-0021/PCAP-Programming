@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     container_name: server
     command: sleep infinity
-    networks:
-      - TCP_NET
 
   client:
     build:
@@ -16,10 +14,3 @@ services:
       dockerfile: Dockerfile
     container_name: client
     command: sleep infinity
-    networks:
-      - TCP_NET
-
-networks:
-  TCP_NET:
-    name: TCP_NET
-    external: true
