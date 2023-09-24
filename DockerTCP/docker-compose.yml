@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: server
+      dockerfile: Dockerfile
+    container_name: server
+    command: sleep infinity
+    networks:
+      - TCP_NET
+
+  client:
+    build:
+      context: client
+      dockerfile: Dockerfile
+    container_name: client
+    command: sleep infinity
+    networks:
+      - TCP_NET
+
+networks:
+  TCP_NET:
+    name: TCP_NET
+    external: true
