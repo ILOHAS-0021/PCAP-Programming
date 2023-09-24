@@ -1,4 +1,4 @@
-# PCAP-Programming
+# [WHS][PCAP-Programming] 6반 박진석(3871)
 
 ## C, C++ 기반 PCAP API를 활용하여 PACKET의 정보를 출력하는 프로그램 작성
 Ethernet Header : src mac / dst mac <br />
